@@ -1,13 +1,36 @@
 
+temp = "temp"
+
 task :site do
-  temp = "temp"
-  puts `git clone -l -s -b gh-pages . ../#{temp}`
+  clone
   if system("mvn site-deploy")
-    puts `cd ../#{temp} && git add -A && git commit -m "deploying site" && git push origin gh-pages`
-    puts `git push origin gh-pages`
+    push "deploying site"
     puts " site deployed successfully "
   else
     puts " site deployment failed "
   end
-  puts `rm -r ../#{temp}`
+  clean
+end
+
+task :repo do
+  clone
+  if system("mvn release:perform")
+    push "releasing artifacts"
+    puts " artifact released successfully "
+  else
+    puts " could not release artifact "
+  clean
+end
+
+def clone
+  puts `git clone -l -s -b gh-pages . ../#{temp}`
+end
+
+def push(message) 
+  puts `cd ../#{temp} && git add -A && git commit -m "#{message}" && git push origin gh-pages`
+  puts `git push origin gh-pages`
+end
+
+def clean
+    puts `rm -r ../#{temp}`
 end

@@ -15,10 +15,38 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  	<distributionManagement>
-	<site>
-	  <id>imagebundler</id>
-	  <url>file:///${basedir}/../temp</url>
-	</site>
-	</distributionManagement>	
+
+  <scm>
+    <connection>
+      scm:git:ssh://github.com:443/ananthakumaran/maven-demo.git
+    </connection>
+    <developerConnection>
+      scm:git:ssh://github.com:443/ananthakumaran/maven-demo.git
+    </developerConnection>
+    <url>
+      scm:git:ssh://github.com:443/ananthakumaran/maven-demo.git
+    </url>
+  </scm>
+
+  <build>
+    <plugins>
+      <plugin>
+	<artifactId>maven-release-plugin</artifactId>
+	<configuration>
+	  <localCheckout>true</localCheckout>
+	</configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <distributionManagement>
+    <site>
+      <id>maven-demo</id>
+      <url>file:///${basedir}/../temp</url>
+    </site>
+    <repository>
+      <id>maven-demo</id>
+      <url>file:///${basedir}/../temp/maven2 </url>
+    </repository>
+  </distributionManagement>	
 </project>
