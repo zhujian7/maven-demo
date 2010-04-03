@@ -1,5 +1,5 @@
 
-temp = "temp"
+@temp = "temp"
 
 task :site do
   clone
@@ -24,14 +24,14 @@ task :repo do
 end
 
 def clone
-  puts `git clone -l -s -b gh-pages . ../#{temp}`
+  puts `git clone -l -s -b gh-pages . ../#{@temp}`
 end
 
 def push(message) 
-  puts `cd ../#{temp} && git add -A && git commit -m "#{message}" && git push origin gh-pages`
+  puts `cd ../#{@temp} && git add -A && git commit -m "#{message}" && git push origin gh-pages`
   puts `git push origin gh-pages`
 end
 
 def clean
-    puts `rm -r ../#{temp}`
+    puts `rm -r ../#{@temp}`
 end
