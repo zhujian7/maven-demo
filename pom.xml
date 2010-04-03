@@ -15,4 +15,10 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  	<distributionManagement>
+	<site>
+	  <id>imagebundler</id>
+	  <url>file:///${basedir}/../temp</url>
+	</site>
+	</distributionManagement>	
 </project>
