@@ -17,13 +17,13 @@
 
   <scm>
     <connection>
-      scm:git:ssh://github.com:443/ananthakumaran/maven-demo.git
+      scm:git:http://github.com/ananthakumaran/maven-demo.git
     </connection>
     <developerConnection>
-      scm:git:ssh://github.com:443/ananthakumaran/maven-demo.git
+      scm:git:http://github.com/ananthakumaran/maven-demo.git
     </developerConnection>
     <url>
-      scm:git:ssh://github.com:443/ananthakumaran/maven-demo.git
+      scm:git:http://github.com/ananthakumaran/maven-demo.git
     </url>
   </scm>
 

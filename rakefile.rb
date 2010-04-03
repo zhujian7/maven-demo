@@ -19,6 +19,7 @@ task :repo do
     puts " artifact released successfully "
   else
     puts " could not release artifact "
+  end
   clean
 end
 
