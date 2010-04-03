@@ -13,6 +13,7 @@ task :site do
 end
 
 task :repo do
+  @temp = ".target/checkout/target/github"
   clone
   if system("mvn release:perform")
     push "releasing artifacts"
