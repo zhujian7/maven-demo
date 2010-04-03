@@ -3,7 +3,7 @@
   <groupId>com.ananthakumaran</groupId>
   <artifactId>maven-demo</artifactId>
   <packaging>jar</packaging>
-  <version>1.2.1-SNAPSHOT</version>
+  <version>1.2.1</version>
   <name>maven-demo</name>
   <url>http://maven.apache.org</url>
   <dependencies>
