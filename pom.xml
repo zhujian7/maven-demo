@@ -41,11 +41,11 @@
   <distributionManagement>
     <site>
       <id>maven-demo</id>
-      <url>file:///${project.build.directory}/../../../../temp</url>
+      <url>file:///${basedir}/../../../temp</url>
     </site>
     <repository>
       <id>maven-demo</id>
-      <url>file:///${project.build.directory}/../../../../temp/maven2</url>
+      <url>file:///${basedir}/../../../temp/maven2</url>
     </repository>
   </distributionManagement>	
 </project>
