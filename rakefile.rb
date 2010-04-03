@@ -1,38 +1,14 @@
 
-@temp = "./target/github"
-
-task :site do
-  clone
-  if system("mvn site-deploy")
-    push "deploying site"
-    puts " site deployed successfully "
-  else
-    puts " site deployment failed "
-  end
-  clean
-end
-
-task :repo do
-  @temp = "./target/checkout/target/github"
-  clone
+task :release do
+  temp = "../temp"
+  puts `git clone -l -s -b gh-pages . #{temp}`
   if system("mvn release:perform")
-    push "releasing artifacts"
-    puts " artifact released successfully "
+      puts `cd #{temp} && git add -A && git commit -m "releasing artifacts" && git push origin gh-pages`
+      puts `git push origin gh-pages`
+      puts " artifact released successfully "
   else
     puts " could not release artifact "
   end
-  clean
+  puts `rm -r #{temp}`
 end
 
-def clone
-  puts `git clone -l -s -b gh-pages . #{@temp}`
-end
-
-def push(message) 
-  puts `cd #{@temp} && git add -A && git commit -m "#{message}" && git push origin gh-pages`
-  puts `git push origin gh-pages`
-end
-
-def clean
-#    puts `rm -r #{@temp}`
-end
