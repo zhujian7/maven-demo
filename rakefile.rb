@@ -13,7 +13,7 @@ task :site do
 end
 
 task :repo do
-  @temp = ".target/checkout/target/github"
+  @temp = "./target/checkout/target/github"
   clone
   if system("mvn release:perform")
     push "releasing artifacts"
@@ -34,5 +34,5 @@ def push(message)
 end
 
 def clean
-    puts `rm -r #{@temp}`
+#    puts `rm -r #{@temp}`
 end
