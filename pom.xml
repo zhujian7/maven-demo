@@ -23,7 +23,7 @@
       scm:git:http://github.com/ananthakumaran/maven-demo.git
     </developerConnection>
     <url>
-      scm:git:http://github.com/ananthakumaran/maven-demo.git
+      http://github.com/ananthakumaran/maven-demo
     </url>
   </scm>
 
